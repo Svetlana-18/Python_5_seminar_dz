@@ -18,7 +18,7 @@ def draw_board(board):
 def take_input(player_token):
     valid = False
     while not valid:
-        player_answer = input("Куда поставим " + player_token+"? ")
+        player_answer = input("Куда поставим " + player_token+"?   ")
         try:
             player_answer = int(player_answer)
         except:
