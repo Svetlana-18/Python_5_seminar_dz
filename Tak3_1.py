@@ -19,9 +19,9 @@ def p_print(name, k, counter, value):
     print(f"Ходил {name}, он взял {k}, теперь у него {counter}. Осталось на столе {value} конфет.")
 
 player1 = input("Введите имя первого игрока: ")
-player2 = input("Введите имя второго игрока: ")
+player2 = "Bot"
 value = int(input("Введите количество конфет на столе: "))
-flag = randint(0,2) 
+flag = randint(0,2)
 if flag:
     print(f"Первый ходит {player1}")
 else:
@@ -38,7 +38,7 @@ while value > 28:
         flag = False
         p_print(player1, k, counter1, value)
     else:
-        k = input_dat(player2)
+        k = randint(1,29)
         counter2 += k
         value -= k
         flag = True
@@ -48,10 +48,3 @@ if flag:
     print(f"Выиграл {player1}")
 else:
     print(f"Выиграл {player2}")
-
-
-
-
-
-
-

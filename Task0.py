@@ -14,23 +14,23 @@
 from random import sample
 
 
-def list_rand_words(count: int, alp: str = 'абв'):
+def text_creation(count: int, word: str = 'абв'):
     words_list = []
     for i in range(count):
-        letters = sample(alp, 3)
-        words_list.append("".join(letters))
+        text = sample(word, 3)
+        words_list.append("".join(text))
     return " ".join(words_list)
 
 
-# def list_rand_words(count: int, alp: str = 'абв'):
-#     return " ".join("".join(sample(alp, 3)) for _ in range(count))
+def word_deletion(words: str) -> str:
+    return " ".join(i for i in words.split() if i not in "абв")
 
 
-def simple_sentence(words: str) -> str:
-    # return " ".join(words.replace("абв", "").split())
-    return " ".join(i for i in words.split() if i != "абв")
+num = (int(input("Введите количество слов (положительное, целое число): ")))
 
-
-all_list = list_rand_words(int(input("Number of words: ")))
-print(all_list)
-print(simple_sentence(all_list))
+if num <= 0:
+    print('Некорректный ввод, введите целое, положительное число')
+else:
+    finall_list = text_creation(num)
+    print(finall_list)
+    print(word_deletion(finall_list))
